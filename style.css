@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Patrick+Hand&family=Poppins:wght@300;600&family=Roboto&display=swap');
+body{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+*{
+   
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:1.8%;
+    }
+
+.nav {
+    display: flex;
+    justify-content: space-between; /* This will push .right and .left to the opposite ends */
+    align-items: center;             /* Vertically centers the items */
+    width: 70%;  
+    margin-left: auto;
+    margin-right: auto;
+                       /* Takes the full width of its parent */
+}
+
+.left{
+    display:flex;
+    justify-content: space-evenly;
+    gap:19px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color:#5e5252;
+
+    
+}
+
+.left a {
+    text-decoration: none;
+    color:#5e5252;
+    
+}
+
+.about a:hover, 
+.research a:hover, 
+.projects a:hover, 
+.docs a:hover {
+    color: black;
+    border-bottom: 2px solid black;
+}
+
+
+.right{
+    font-family: 'Gochi Hand', cursive;
+    font-weight: 100;
+}
+
+.right a {
+    text-decoration: none;
+    color: #333;
+    outline: none;
+}
+
+.hero {
+    width: 70%;  
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2%;
+    animation: slideUp 1s ease-out forwards;
+}
+
+
+@keyframes slideUp {
+    from {
+        transform: translateY(10%); 
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+
+.hero h1{
+font-size: 110px;
+line-height: 120px;
+letter-spacing:-3px;
+font-family: 'Poppins', sans-serif;
+color: #333;
+margin-top:7%;
+}
+
+@media (min-width: 1921px) {
+    .hero  {
+        width:70%;
+    }
+
+    .hero h1{
+        font-size: 80px;
+        margin-top:-2%;
+    }
+
+    .bottom{
+        margin-top:2%;
+    }
+}
+
+span{
+    font-family:serif,cursive;
+    font-style: italic;
+    font-weight:100;
+}
+
+.bottom p{
+    font-size:17px;
+    font-family: 'Poppins', sans-serif;
+    color:#333;
+    margin-top:-60px;
+    font-weight:500;
+}
+
+.socials{
+    display: flex;
+    justify-content: flex-start; 
+    gap:30px;
+    align-items: center;             
+    width: 70%;  
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 35px;
+    color:#777676;
+    margin-top:2%;
+    transition: all 0.4s;
+}
+
+.socials a{
+    color:#333;
+    transition: all 0.4s;
+    
+}
+
+.socials div a i {
+    transition: transform 0.5s ease-in-out;  /* smooth transition for scaling effect */
+}
+
+.socials div a:hover i {
+    transform: scale(1.1);
+}
+
+.socials div a i {
+    padding: 11px; /* Adjust the padding as desired */
+    border: 0px solid #333; /* Adjust the border color as needed */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow, you can adjust to your preference */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 50%;;
+}
+
+.socials div a:hover i {
+    transform: scale(1.1);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3); /* A more pronounced shadow on hover */
+}
+
+
+
+
+
+
+
+.contact{
+    width: 70%;  
+    margin-left: auto;
+    margin-right: auto;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top:5%;          
+   
+    
+}
+
+.contact h3{
+    font-family: 'Poppins', sans-serif;
+    color:#333;
+    font-size: 30px;
+    
+    
+}
+
+.contact p{
+    margin-top:-5px;
+    font-size: 19px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact p a {
+    color:#333;
+}
+
+
+.more-links{
+    margin-top:-23px;
+}
+.more-links a {
+    margin-right: 20px; 
+    color:#333;
+    font-size: 19px;
+   
+}
+
+.more-links a:last-child {
+    margin-right: 0; 
+}
+a{
+ cursor: pointer;
+}
+
+.mobile-nav {
+    display: none;
+    /* ... other styles ... */
+}
+
+
+
+
+
+@media (max-width: 768px) {  /* 768px is a typical breakpoint for tablets. Adjust this value as you see fit for your design. */
+    
+.body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:100%;
+    margin-left:-17px;
+    margin-top:1.8%;
+    overflow-x: hidden;
+   
+    }
+    
+    .right{
+        font-size:10px;
+    }
+
+  
+    
+    
+    .hero h1{
+        font-size: 50px;
+        line-height: 55px;
+        letter-spacing:-3px;
+        font-family: 'Poppins', sans-serif;
+        color: #333;
+        margin-top:22%;
+        }
+
+        .bottom p{
+            font-size:15px;
+            font-family: 'Poppins', sans-serif;
+            color:#333;
+            margin-top:-19px;
+            font-weight:500;
+            width:110%;
+            line-height: 22px;
+        }
+
+        .socials{
+            display: flex;
+            justify-content: flex-start; 
+            gap:10px;
+            align-items: center;             
+            width: 70%;  
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 18px;
+            color:#777676;
+            margin-top:2%;
+        }
+
+
+        .contact{
+            width: 70%;  
+            margin-left: auto;
+            margin-right: auto;
+            display:flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            margin-top:5%;          
+           
+            
+        }
+        
+        .contact h3{
+            font-family: 'Poppins', sans-serif;
+            color:#333;
+            font-size: 20px;
+            
+            
+        }
+        
+        .contact p{
+            margin-top:-5px;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .contact p a {
+            color:#333;
+        }
+        
+        
+        .more-links{
+            margin-top:-23px;
+        }
+        .more-links a {
+            margin-right: 20px; 
+            color:#333;
+            font-size: 12px;
+           
+        }
+        
+}
+
+/* General styles for icons */
+.fa-bars, .fa-times {
+    font-size: 24px;
+    cursor: pointer; /* Makes the icons feel more interactive */
+}
+
+.left.desktop-nav {
+    display: none;
+}
+
+
+/* Mobile Styles: Target screens up to 768px */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        margin-right:-44px
+    }
+
+    /* Position the mobile navigation off-screen to the right by default */
+    .mobile-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100vh;
+        display:flex;
+        flex-direction: column;
+        z-index: 3000;
+        gap:20px;
+        background-color:white; /* Adjust to match your design */
+        overflow-y: auto;
+        transition: transform 0.3s ease;
+        transform: translateX(100%);
+    }
+
+    .mobile-nav a{
+        text-decoration: none;
+        margin-left: 11px;
+        color:#333;
+    }
+
+    .mobile-nav a:hover{
+        border-bottom:1px #333;
+    }
+
+    .close-icon {
+        display: flex;
+        justify-content: end;
+        padding: 10px;
+    }
+
+    /* Style for when mobile navigation is active/open */
+.mobile-nav.open {
+    transform: translateX(0); /* Slide in from the right */
+}
+}
+
+/* Desktop Styles: For screens larger than 768px */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none; /* Hide the hamburger icon on desktop */
+    }
+
+    .left.desktop-nav {
+        display: flex; /* Display the desktop navigation */
+    }
+}
+
+
