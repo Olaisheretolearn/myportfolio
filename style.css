@@ -388,6 +388,10 @@ a{
         display: block;
         margin-right:-44px
     }
+    .page_404 p{
+        margin-top:-23px;
+        font-size: 12px;
+    }
 
     /* Position the mobile navigation off-screen to the right by default */
     .mobile-nav {
@@ -437,6 +441,7 @@ a{
     .left.desktop-nav {
         display: flex; /* Display the desktop navigation */
     }
+
 }
 
 
