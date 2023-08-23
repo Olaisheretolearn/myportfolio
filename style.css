@@ -338,6 +338,41 @@ a{
     display: none;
 }
 
+.page_404{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* This will push .right and .left to the opposite ends */
+    align-items: center;             /* Vertically centers the items */
+    width: 70%;  
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page_404 h1{
+    font-size: 63px;
+}
+
+.page_404 img{
+    margin-top:-72px;
+}
+
+.page_404 h5{
+    font-size:19px;
+}
+
+.page_404 p{
+    margin-top:-23px
+}
+
+.goHome{
+    border:1px solid #333;
+    padding:7px;
+    color:white;
+    background-color:#333;
+    border-radius: 7px;
+    margin-top:15px;
+}
+
 
 /* Mobile Styles: Target screens up to 768px */
 @media (max-width: 768px) {
