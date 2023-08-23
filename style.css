@@ -346,14 +346,17 @@ a{
     width: 70%;  
     margin-left: auto;
     margin-right: auto;
+    font-family: 'Poppins', sans-serif;
 }
 
 .page_404 h1{
     font-size: 63px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .page_404 img{
     margin-top:-72px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .page_404 h5{
@@ -366,11 +369,16 @@ a{
 
 .goHome{
     border:1px solid #333;
-    padding:7px;
+    padding:11px;
     color:white;
     background-color:#333;
     border-radius: 7px;
     margin-top:15px;
+}
+
+.goHome a {
+    color:white;
+    text-decoration:none;
 }
 
 
