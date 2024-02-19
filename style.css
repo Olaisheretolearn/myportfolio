@@ -229,7 +229,7 @@ a{
 
 
 
-@media (max-width: 768px) {  /* 768px is a typical breakpoint for tablets. Adjust this value as you see fit for your design. */
+@media (max-width: 768px) {  
     
 .body{
     display: flex;
