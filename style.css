@@ -109,7 +109,7 @@ margin-bottom:80px;;
     }
 
     .hero h1{
-        font-size: 80px;
+        font-size: 50px;
         margin-top:-2%;
     }
 
@@ -242,9 +242,10 @@ a{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width:100%;
-    margin-left:-17px;
+    width:110%;
+    margin-left:-40px;
     margin-top:1.8%;
+    
     overflow-x: hidden;
    
     }
@@ -253,23 +254,26 @@ a{
         font-size:10px;
     }
 
+    
+
   
     
     
     .hero h1{
-        font-size: 50px;
-        line-height: 55px;
+        font-size: 40px;
+        line-height: 45px;
         letter-spacing:-3px;
         font-family: 'Poppins', sans-serif;
         color: #333;
-        margin-top:22%;
+        margin-top:19%;
+        margin-bottom:37px;
         }
 
         .bottom p{
-            font-size:15px;
+            font-size:12px;
             font-family: 'Poppins', sans-serif;
             color:#333;
-            margin-top:-19px;
+            
             font-weight:500;
             width:110%;
             line-height: 22px;
