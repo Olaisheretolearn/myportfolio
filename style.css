@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Patrick+Hand&family=Poppins:wght@300;600&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Indie+Flower&family=Oswald:wght@500&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,200;0,300;0,500;0,600;1,200;1,300&family=Quicksand:wght@300;500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Gochi+Hand&family=Indie+Flower&family=Oswald:wght@500&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,200;0,300;0,500;0,600;1,200;1,300&family=Quicksand:wght@300;500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 body{
     margin:0;
     padding:0;
@@ -11,7 +12,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width:80%;
+    width:100%;
     margin-left: auto;
     margin-right: auto;
     margin-top:1.8%;
@@ -88,12 +89,18 @@ body{
 
 
 .hero h1{
-font-size: 110px;
-line-height: 120px;
+font-size: 60px;
+line-height: 80px;
 letter-spacing:-3px;
 font-family: 'Poppins', sans-serif;
-color: #333;
+color: black;
+font-weight:900;
 margin-top:7%;
+margin-bottom:80px;;
+}
+
+.hero h1 a {
+    color: #3965ca;
 }
 
 @media (min-width: 1921px) {

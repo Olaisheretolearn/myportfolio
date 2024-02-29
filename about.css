@@ -133,6 +133,10 @@ h2 a {
     font-weight: 600;
 }
 
+.righta p{
+    font-weight: 600;;
+}
+
 
 
 .lefta img {
@@ -243,6 +247,13 @@ a{
 .project p{
     float:left;
     margin-top :-2%;
+    font-weight: 600;
+}
+
+.project h4{
+    font-size: larger;
+    font-weight: 1000;
+    text-decoration: underline;
 }
 
 hr {
