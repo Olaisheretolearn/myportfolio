@@ -120,6 +120,40 @@ font-weight:500;
     color: white;
 }
 
+.exact2{
+    background-color: rgb(46, 45, 45) ;
+   
+    border:3px solid black;
+    border-radius: 7px;;
+    padding:20px;
+    width:40%;
+    margin-left: 13%;
+    margin-right: auto;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top:2px;;
+    font-size:12px;
+    font-family: 'Poppins', sans-serif;
+    color:#333;
+    font-weight:500;
+}
+
+.exact2 ul li a {
+    color:green;
+}
+
+.exact2 ul li{
+    color: white;
+}
+
+.exact2 .header1{
+    color: white;
+}
+
+
 @media (min-width: 1921px) {
     .namebio {
         
