@@ -8,6 +8,7 @@ body{
 }
 
 
+
 a{
     color:black
  }
@@ -67,6 +68,11 @@ h2 a {
     font-weight: 100;
 }
 
+.image1{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .namebio{
     width:70%;
     margin-left: auto;
@@ -121,9 +127,9 @@ font-weight:500;
 }
 
 .exact2{
-    background-color: rgb(46, 45, 45) ;
+ 
    
-    border:3px solid black;
+
     border-radius: 7px;;
     padding:20px;
     width:40%;
@@ -146,11 +152,11 @@ font-weight:500;
 }
 
 .exact2 ul li{
-    color: white;
+    color: black;
 }
 
 .exact2 .header1{
-    color: white;
+    color: black;
 }
 
 
@@ -424,6 +430,11 @@ img{
         .left {
             display: none;  /* This hides the nav */
         }
+
+
+
+
+
     
         .hero h1{
             font-size: 50px;
