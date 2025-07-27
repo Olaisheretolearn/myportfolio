@@ -3,103 +3,529 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Open Graph tags -->
-    <meta property="og:title" content="Olaoluwa Oke">
-    <meta property="og:description" content="Welcome to Olaoluwa Oke's personal website.">
-    <meta property="og:image" content="https://olaoluwaoke.com/Thumbnail.png">
-    <meta property="og:url" content="https://olaoluwaoke.com">
-    <meta property="og:type" content="website">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://kit.fontawesome.com/2b6c3456a7.js" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <title>Olaoluwa Oke</title>
+    <title>Olaoluwa Oke - Portfolio</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,301,400&display=swap" rel="stylesheet"> 
+    <style>
+
+       
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+
+
+        body {
+            /*font-family: 'Georgia', serif;*/
+            font-family: 'Satoshi', sans-serif;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            color: #e0e0e0;
+        }
+
+        /* Dark mode (default) */
+        .dark {
+            background-color: #000000;
+            color: #a8a7a7;
+        }
+
+        /* Light mode */
+        .light {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        a{
+            color: white;
+
+        }
+
+        .nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav a {
+            color: inherit;
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav a:hover {
+            opacity: 0.7;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 1px solid currentColor;
+            color: inherit;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            opacity: 0.7;
+        }
+
+        /* Bio section */
+        .bio {
+            margin-bottom: 80px;
+        }
+
+        .name {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .description {
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .social-links a {
+            color: inherit;
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-links a:hover {
+            opacity: 0.7;
+        }
+
+        /* Filter tabs */
+        .filter-tabs {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            background: none;
+            border: none;
+            color: inherit;
+            font-size: 14px;
+            text-transform: lowercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            padding: 10px 0;
+            transition: opacity 0.3s ease;
+            position: relative;
+        }
+
+        .filter-tab:hover,
+        .filter-tab.active {
+            opacity: 0.7;
+        }
+
+        .filter-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: currentColor;
+        }
+
+        /* Projects grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .project {
+            transition: all 0.3s ease;
+        }
+
+        .project.hidden {
+            display: none;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 250px;
+            background: #333;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .light .project-image {
+            background: #f0f0f0;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project-year {
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        .project-description {
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+
+        .project-link {
+            color: inherit;
+            text-decoration: none;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-link:hover {
+            opacity: 1;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 20px;
+                margin-bottom: 40px;
+            }
+
+            .nav {
+                gap: 20px;
+            }
+
+            .name {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+
+            .filter-tabs {
+                gap: 20px;
+                margin-bottom: 40px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .project-image {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                align-items: flex-start;
+            }
+
+            .nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .filter-tabs {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .name {
+                font-size: 20px;
+                letter-spacing: 2px;
+            }
+        }
+
+        /* Project images */
+        .mesh-network {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        }
+
+        .ide-project {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+        }
+
+        .compiler-project {
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+        }
+
+        .camp-social {
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+        }
+
+        .hack-club {
+            background: linear-gradient(45deg, #43e97b, #38f9d7);
+        }
+
+        .ai-startup {
+            background: linear-gradient(45deg, #fa709a, #fee140);
+        }
+    </style>
 </head>
+<body class="dark">
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">Olaoluwa Oke</div>
+            <nav class="nav">
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="theme-toggle" id="themeToggle">Light Mode</button>
+        </header>
 
-<body>
-
-    <section class="one">
-        <div class="body">
-            <div class="nav">
-                <div class="right">
-                    <h2><a href="index.html">Olaoluwa Oke</a></h2>
-                </div>
-                <div class="left desktop-nav"> <!-- Added the class 'desktop-nav' -->
-                    <div class="about"><a href="about.html">About</a></div>
-                    <div class="research"><a href="projects.html">Projects</a></div>
-                    <div class="projects"><a href="https://melancholy-mornings.netlify.app/">Blog</a></div>
-                    <div class="docs"><a href="">Docs</a></div>
-                </div>
-            
-                <!-- Hamburger Icon -->
-                <div class="hamburger">
-                    <i class="fa-solid fa-bars"></i>
-                    
-                </div>
-            
-                <!-- Slide-out menu -->
-                <div class="mobile-nav" id="mobileNav" >
-                    <div class="close-icon"><i class="fa-solid fa-times"></i></div>
-                    
-                    <div class="about"><a href="about.html">About</a></div>
-                    <div class="research"><a href="projects.html">Projects</a></div>
-                    <div class="projects"><a href="https://melancholy-mornings.netlify.app/"   target="_blank">Blog</a></div>
-                    <div class="docs"><a href="">Docs</a></div>
-                </div>
+        <!-- Bio Section -->
+        <section class="bio">
+            <h1 class="name">Olaoluwa Oke</h1>
+            <p class="description">
+                I study Applied Computer Science at the <a href="">University of Winnipeg</a>, 
+                where I founded and lead the university’s first Competitive Programming
+                
+                team <span style="color: white;">placing 14th in Canada at IEEExtreme and winning provincial gold at ICPC</span>. 
+                I’m a research assistant working on hybrid identity-based encryption for secure D2D communication. 
+                This fall, I’ll be representing the university at the BE-STEMM 
+                conference as an executive in the <span style="color: white;">Canadian Black Scientist Network.</span></p>
+            <p class="description">
+                Previously, I spent over a year at <span style="color: white;">SkipTheDishes</span> supporting operations for one of Canada’s largest 
+                food delivery platforms. I then conducted research on the sociological and psychological dynamics 
+                of roommate relationships, studying patterns in shared living from 2015 to 2025. As a follow-up, 
+                I built <span style="color: white;">Awa</span>, a roommate organizing app that translates
+                 these findings into tools for coordinating chores, bills, and communication in co-living spaces.
+            </p>
+            <div class="social-links">
+                <a href="https://github.com/Olaisheretolearn" target="_blank" style="color: white;">GitHub</a>
+                <a href="#" target="_blank">X</a>
+                <a href="https://www.linkedin.com/in/olaoluwaokesamuel/" target="_blank" style="color: white;" >LinkedIn</a>
             </div>
-            
+        </section>
 
-            <div class="hero">
-                <div class="top">
-                    <h1>Architecting software,  <span> building worlds.</span></h1>
-</div>
- <br> <br>
-                <div class="bottom">
-                    <p><strong>Software Engineer (in training) -  </strong>backend systems, web apps & human-centered tech ,  <br> <br>
-
-                        I’ve built backend systems with Springboot in Java, Kotlin, and MongoDB. I’ve also worked jobs that taught me how to deal with chaos—Paramount+, SkipTheDishes, Sprint, T-Mobile. I know what it means to listen to real people.
-
-                        <br> <br>
-
-                        At the University of Winnipeg, I’ve mentored international students, tutored peers, and represented my school at ICPC Regionals with an Honourable mention and IEEEXtreme (2nd in Manitoba, 14th in Canada).
-                        &nbsp;
-
-                    <br> <br>
-                    I maintain a public <a href="https://melancholy-mornings.netlify.app/">journal</a> where I write about tech, projects, and personal growth along the way.
-                    <br> <br>
-                    <i>Nothing great was ever achieved without enthusiasm.</i> - Ralph Waldo Emerson
-                </p>
-                    
-                </div>
-            </div>
-
-            <div class="socials">
-                <div class="github"><a href="https://github.com/Olaisheretolearn" target="_blank"> <i class="fa-brands fa-github"> </i></a>  </div>
-                <div class="linkedin"> <a href="https://www.linkedin.com/in/olaoluwa-oke-818052212"><i class="fa-brands fa-linkedin"></i></a></div>
-                <div class="twitter"><a href="https://twitter.com/okeolaoluwa4"><i class="fa-brands fa-twitter"></i></a></div>
-                <div class="mail"><a href="mailto:oke-o59@webmail.uwinnipeg.ca"><i class="fa-solid fa-envelope"></i></a></div>
-                <div class="resume"><a href="https://imgur.com/a/FaDKFtM" target="_blank"><i class="fa-solid fa-file"></i></a></div>
-            </div>
-
-            <div class="contact">
-                <h3>Contact me.</h3>
-                <p>Reach out to me <br> 
-                    <a href="mailto:oke-o59@webmail.uwinnipeg.ca">oke-o59@webmail.uwinnipeg.ca <i class="fa-solid fa-arrow-up-right-from-square"></i></a> <br>
-                    <a href="mailto:olaoluwa.oke@gmail.com">samuellokay@gmail.com <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-
-                    <br> <br>
-                    <div class="more-links">
-                        <a href="https://imgur.com/a/FaDKFtM" target="_blank">Resume <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        <a href="https://github.com/Olaisheretolearn" target="_blank">Github <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        <a href="https://www.linkedin.com/in/olaoluwa-oke-818052212" target="_blank">LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        <a href="https://twitter.com/okeolaoluwa4" target="_blank">Twitter <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                    
-            </div>
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+            <button class="filter-tab active" data-filter="all">All Projects</button>
+            <button class="filter-tab" data-filter="systems">Systems</button>
+            <button class="filter-tab" data-filter="research">Research-paper algorithms impl</button>
+            <button class="filter-tab" data-filter="hardware">Hardware</button>
         </div>
-    </section>
-    
+
+        <!-- Projects Grid -->
+        <section class="projects-grid" id="projectsGrid">
+            <!-- Offline Mesh Network -->
+            <article class="project" data-category="systems">
+                <div class="project-image mesh-network"><img src="images/awa.png" alt=""></div>
+                <div class="project-title">
+                    Awa - A roommate organizing app
+                    <span class="project-year">2025</span>
+                </div>
+                <p class="project-description">
+                    Built Awa, a Spring Boot + MongoDB + Flutter app for coordinating roommate tasks and expenses.
+The app translates 10 years of roommate behavior research into practical co-living tools.
+                </p>
+                 <a href="awa.html" class="project-link">Project Breakdown→</a>
+            </article>
+
+            <!-- IDE for Formal Proofs -->
+            <article class="project" data-category="systems">
+                <div class="project-image ide-project"><img src="images/Tabitha.png" alt=""></div>
+                <div class="project-title">
+                    Tabitha - An app that lets you store bookmarks/links
+                    <span class="project-year">2024</span>
+                </div>
+                <p class="project-description">
+                  Built Tabitha, a Spring Boot + MongoDB + Flutter app for saving and organizing bookmarks across devices.
+The app lets users categorize links, create folders, and access saved content in a clean, synced experience.
+                </p>
+                <a href="tabitha.html" class="project-link">Project breakdown →</a>
+            </article>
+
+            <!-- Compiler from Scratch -->
+            <article class="project" data-category="research">
+                <div class="project-image compiler-project"><img src="images/compiler.png" alt=""></div>
+                <div class="project-title">
+                    Compiler from Scratch
+                    <span class="project-year">2024</span>
+                </div>
+                <p class="project-description">
+                    Built a compiler from scratch in C++, implementing a lexer, parser, and compiler for a 
+                    simpler version of C.
+                </p>
+            </article>
+
+            <!-- Camp Social -->
+            <article class="project" data-category="systems">
+                <div class="project-image camp-social"><img src="images/Therminal.png" alt=""></div>
+                <div class="project-title">
+                    Therminal — The CLI thermometer for developers who code through winter.
+                    <span class="project-year">2023</span>
+                </div>
+                <p class="project-description">
+                    A lightweight CLI tool built in Go to check hourly weather straight from your terminal.
+Designed for winter cities like Winnipeg, it tells you exactly when temperatures rise above brutal lows like –20°C.
+Perfect for developers who work late and just want to know when it's safe to step outside.
+                </p>
+                <a href="#" class="project-link">GitHub Repo →</a>
+            </article>
+
+            <!-- Hack Club -->
+            <article class="project" data-category="systems">
+                <div class="project-image hack-club"><img src="images/kally.png" alt=""></div>
+                <div class="project-title">
+                    Kally - Kally — a smart, Flutter-built medical calculator for nursing and medical students.
+                    <span class="project-year">2022</span>
+                </div>
+                <p class="project-description">
+                    a comprehensive medical calculator built with Flutter, designed for nursing and medical students.
+It covers over 100 clinical formulas across multiple specialties — from drug dosing to fluid rates, cardiology, renal, and more.
+With support for multiple units and clear outputs, Kally simplifies complex calculations into fast, accurate, on-the-go answers.
+                </p>
+                <a href="#" class="project-link">GitHub Repo →</a>
+            </article>
+
+            <!-- AI Agent-Run Startup -->
+            <article class="project" data-category="research">
+                <div class="project-image ai-startup"><img src="images/egm2.png" alt=""></div>
+                <div class="project-title">
+                   Engineers and GeoScientist Manitoba - Freelance
+                    <span class="project-year">2024</span>
+                </div>
+                <p class="project-description">
+                    I built the official website for Engineers Geoscientists Manitoba -Nigerian Chapter, the
+                     governing body for engineering and geoscience professionals in the province.
+                      The site was designed to serve as a central hub for members, students, 
+                    and the public—providing access to licensing information, event updates, application forms, and more.
+                </p>
+                <a href="https://egm-nigeria.ca/" class="project-link">Live Website →</a>
+            </article>
+        </section>
+    </div>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('dark')) {
+                body.classList.remove('dark');
+                body.classList.add('light');
+                themeToggle.textContent = 'Dark Mode';
+            } else {
+                body.classList.remove('light');
+                body.classList.add('dark');
+                themeToggle.textContent = 'Light Mode';
+            }
+        });
+
+        // Project filtering functionality
+        const filterTabs = document.querySelectorAll('.filter-tab');
+        const projects = document.querySelectorAll('.project');
+
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                filterTabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                tab.classList.add('active');
+
+                const filterValue = tab.getAttribute('data-filter');
+
+                // Show/hide projects based on filter
+                projects.forEach(project => {
+                    if (filterValue === 'all') {
+                        project.classList.remove('hidden');
+                    } else {
+                        const projectCategory = project.getAttribute('data-category');
+                        if (projectCategory === filterValue) {
+                            project.classList.remove('hidden');
+                        } else {
+                            project.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
