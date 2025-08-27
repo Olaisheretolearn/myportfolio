@@ -544,18 +544,38 @@
                           overall roommate satisfaction.The Awa app is rooted in extensive research on roommate dynamics,
                            focusing on conflict resolution, personality compatibility, and cultural influences within shared
                             living spaces. 
+
+                                       <div class="platform-image">
+    <img src="images/logo.png" alt="Emergency Automated Response Platform" />
+</div>
                         
-                        <br> <br>   Previous studies have demonstrated that communication style mismatches
-                         often exacerbate conflicts among roommates, while avoiding confrontation can lead 
-                         to prolonged issues and deteriorated relationships <span style="color: white;">(Burgos-Calvillo et al., 2024)</span>. 
-                         This understanding guided the development of Awa, which emphasizes effective communication, 
-                         structured conflict management, and <span style="color: white;">personality-based roommate matching.</span> 
-                         
-                         <br> <br> Drawing on these findings, the app encourages open dialogue, making it 
-                         easier for roommates to address issues like cleaning schedules, guest policies, and noise 
-                         levels, thus fostering a harmonious living environment <span style="color: white;">(Abela et al., 2023)</span>  By integrating 
-                         these sociological insights, Awa is designed to mitigate common sources of conflict and enhance 
-                         overall roommate satisfaction.</p>
+                        <br> <br>  That said, this remains the long-term vision 
+                        of the platform. At present, our team has focused on delivering 
+                        the core MVP: chores, bill-splitting, shopping lists, and chat 
+                        functionality—the basic infrastructure that every shared household needs.
+                         Over time, we hope to move beyond “task coordination” 
+                         into relationship-aware coordination. For example, we plan to collect
+                          users’ MBTI personality types and lightly integrate cultural insights 
+                        so that households can better understand each other’s expectations.
+
+
+                         <br> <br> A simple case might be 
+                         <br> <br> <i>Fatima is an INTJ. If she withdraws after a long day, it doesn’t mean she dislikes her roommates—it’s just her way of recharging. Respecting her 
+                         quiet time makes shared moments more enjoyable later</i>
+
+                         <br> <br> <i>Alex is an ENFP. He thrives on spontaneous hangouts and may
+                             invite friends over. A quick heads-up about noise levels or
+                             guest policies helps keep the vibe fun without crossing boundaries.</i>
+                        
+                <br> <br>
+                By presenting these kinds of personality and cultural insights in 
+                plain language, Awa aims to make roommates more empathetic toward each 
+                other’s differences, 
+                so that small misunderstandings don’t grow into lasting conflicts.
+                             
+                        
+                        </p>
+
                     
                   
                 </div>
@@ -566,20 +586,52 @@
                 <div class="section-content">
 
                     <h3 style="color: white;">Understanding Roommate Dynamics</h3>
-                    <p>One of the main features of Awa is the chore tracking system, which allows housemates to 
-                        create and assign tasks, ensuring everyone knows their responsibilities and promoting fairness.
-                         By keeping track of who did what and when, Awa helps maintain accountability and prevent 
-                         misunderstandings over household duties. Communication is also essential in co-living situations, 
-                         and Awa includes tools like direct messaging and house meetings to facilitate open discussions 
-                         about shared responsibilities and concerns. An anonymous chat feature provides a safe space for 
-                         housemates to address sensitive issues without fear of confrontation, helping prevent conflicts 
-                         from escalating. Additionally, Awa offers a financial management system to track shared bills 
-                         and expenses, ensuring everyone contributes fairly to the household budget and preventing financial
-                          misunderstandings. While mood forecasting and emotional check-ins are planned for future updates, 
-                          the app’s core features are already designed to reduce stress by helping housemates stay organized,
-                           communicate effectively, and share responsibilities. These features lay the foundation for a 
-                           supportive, low-tension living environment, 
-                        and future updates aim to further enhance understanding and cooperation among roommates.</p>
+                    <p>These are the features we’ve focused on first—the everyday essentials that make co-living smoother:
+                    <br>  <br> <strong>Bills & Payments - </strong> Housemates can log bills (one-time or 
+                     recurring, like rent or utilities). Whoever pays first records the
+                      amount and items covered. The cost is then split evenly—including 
+                      the payer—and invoices are generated automatically. Each roommate 
+                      reimburses the payer directly (outside the app), but Awa manages 
+                      payment confirmations: once the payer marks reimbursements as received, 
+                     the bill is officially closed.
+
+
+                    <br>  <br> <strong>Shopping Lists - </strong>Supports multiple 
+                    concurrent lists like groceries, yard supplies, or even holiday 
+                    decorations. Anyone can add or remove items. Selected items can be
+                     staged into a payment list, which seamlessly generates a bill and 
+                     invoice—so if someone picks up groceries, the cost is split instantly. 
+                    Future updates will include auto-parsing of receipts.
+
+                    
+                    <br>  <br> <strong>Tasks & Chores - </strong>Easily assign tasks to 
+                    housemates with due dates. The assigned person is notified and can mark 
+                    tasks complete, 
+                    helping track fairness and accountability in daily chores.
+
+                     <br>  <br> <strong>Chat & Messaging - </strong>Classic group messaging with 
+                     timestamps, plus reactions that work like toggles
+                      (tap again to remove or change your emoji). 
+                      An anonymous chat option (later sprints update) lets roommates
+                      raise sensitive issues without fear of confrontation.
+
+                          <br>  <br> <strong>Misc features</strong>
+                          <ul>
+                            <li>Multi-currency support.</li>
+                            <li>Room invite codes (with option to deactivate 
+                                and regenerate)</li>
+                                <li>Store each housemate’s Interac email in-app for quick transfers.</li>
+                          <li>A clean dashboard shows summaries of chores, shopping items, 
+                            and bills at a glance so roommates 
+                            always know what’s pending..</li>
+                            </ul>
+
+
+
+                                                              <div class="platform-image">
+    <img src="images/logo2.png" alt="Emergency Automated Response Platform" />
+</div>
+                    </p>
                     
                 </div>
             </section>
@@ -607,12 +659,15 @@
                             These tools ensure that user 
                             data is encrypted and securely transmitted between the frontend and backend.</p>
 
-                            <p>In terms of architectural considerations, I opted for a Model-View-Controller (MVC) pattern 
-                                for both the backend and frontend. This approach helps to separate concerns, making the code
-                                 more modular and maintainable. The Model handles the business logic and data (via Spring Boot and MongoDB)
-                                 , the View manages the UI (via Flutter), and the Controller coordinates user input and 
-                                 application behavior. 
-                                This separation allows for easier scalability and testing as the project evolves.</p>
+                            <p>
+                                The app is fully dockerized for easy deployment and scalability, 
+                                ensuring a consistent environment across development and production. 
+                                At the moment, it is hosted on Render, giving us reliable cloud-based 
+                                performance during the MVP stage. Looking ahead, we plan to migrate hosting
+                                 to Brimble, a platform tailored for African developers, to take advantage 
+                                 of its localized infrastructure and support for scaling 
+                                in markets where co-living solutions like Awa are most needed.
+                            </p>
 
                                 <div class="platform-images">
     <div class="platform-image-half">
@@ -637,11 +692,10 @@
             <section class="section">
                 <h2 class="section-title">User Experience & Interface Design</h2>
                 <div class="section-content">
-                    <p>Àwà is designed to feel warm, expressive, and human, a roommate app that understands that 
-                        logistics don't have to be boring, but about navigating shared life with empathy and ease.
-                         We leaned into a <span style="color: white;">playful, vibrant visual language</span> that breaks away from the sterile tone of most task or finance apps. 
-                        The interface is filled with color, illustrations, and conversational cues to make the user 
-                        feel welcomed, not overwhelmed.</p> <br> <br>
+                    <p>Àwa plays on both the English word <span style="color: white;">"Our"</span> and the Yoruba word for <span style="color: white;">"us"</span>, capturing the spirit of togetherness at the heart of shared living. It is designed to feel warm, 
+                        expressive, and human—a roommate app that understands logistics don’t have to be boring, but about navigating shared life with empathy and ease. We leaned into a playful,
+                         vibrant visual language that breaks away from the sterile tone of most task or finance apps. The interface is filled with color, illustrations, 
+                        and conversational cues, making the user feel welcomed, not overwhelmed—because in the end, Àwa isn’t just about tasks, it’s about us.</p> <br> <br>
 
                     <p><span style="color: white;">Typography</span> : We chose <span style="color: white;">Darker Grotesque and Boulder</span> for their bold, clean personalities. 
                         Dark Grotesque brings clarity and structure, while Boulder adds a soft, rounded tone that 
@@ -649,8 +703,7 @@
 
                     <p><strong>Color Palette & Mood:</strong> The app uses <span style="color: white;">bright blues, bold yellows and deep purples</span>,  to evoke energy and trust. The palette reinforces a sense of movement and personality which is essential for an app designed around daily house life.</p>
 
-                    <p><strong>Illustration & Motion : </strong> From background stickers (pizza slices, detergent bottles, sandals) to interactive elements like “2 chores pending” or “You’ve got 5 messages,” the interface carries small doses of joy. These weren’t just decorative choices they’re emotional cues that lower the stress of house management.</p>
-
+                    <p><strong>Illustration & Motion : </strong> From background stickers (pizza slices, detergent bottles, sandals) to interactive elements like “2 chores pending” or “You’ve got 5 messages,” the interface carries small doses of joy. </p>
                                    <div class="platform-images">
     <div class="platform-image-half">
         <img src="images/awahomepage.jpg" alt="Emergency Automated Response Platform" />
@@ -680,6 +733,28 @@
     <div class="platform-image-half">
         <img src="images/onemore.jpg" alt="Emergency Automated Response Platform" />
     </div>
+   
+    
+</div>
+
+<div class="platform-images">
+    <div class="platform-image-half">
+        <img src="images/awasc5.jpg" alt="Emergency Automated Response Platform" />
+    </div>
+    <div class="platform-image-half">
+        <img src="images/awasc6.jpg" alt="Second Platform" />
+    </div>
+
+    <div class="platform-image-half">
+        <img src="images/awasc7.jpg" alt="Emergency Automated Response Platform" />
+    </div>
+   
+    
+</div>
+
+
+
+ 
    
     
 </div>
