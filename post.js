@@ -274,7 +274,7 @@ that this project is situated.</p>
     </ul>
 
     <blockquote>
-      Coordination problems are often human problems. Awa aims to solve both—starting with the system, then supporting the people.
+      Coordination problems are often human problems. Awa aims to solve both starting with the system, then supporting the people.
     </blockquote>
 
     <h2>Tech Stack</h2>
@@ -336,8 +336,147 @@ that this project is situated.</p>
     <p>
       For now, the focus is reliability: fast, clean coordination that households can trust every day.
     </p>
+    
+    <img src="/images/awasc5.jpg" alt="placeholder"  style="width:20%;height:auto;"/>
+     <img src="/images/awasc6.jpg" alt="placeholder"  style="width:20%;height:auto;"/>
+      <img src="/images/awasc7.jpg" alt="placeholder"  style="width:20%;height:auto;"/>
+       <img src="/images/awasc8.jpg" alt="placeholder"  style="width:20%;height:auto;"/>
+        <img src="/images/awasc9.jpg" alt="placeholder"  style="width:20%;height:auto;"/>
+   
+   
+   
+
+    <p>Contributions? Questions? <br> Please reach out at reacholaoke@gmail.com
+  `
+},
+
+
+{
+  slug: "office-hours",
+  title: "Office Hours – Live Queue + Video Call System",
+  author: "Ola Oke",
+  date: "2025",
+  linkText: "GitHub",
+  linkUrl: "https://github.com/yourusername/office-hours", // change later
+  contentHtml: `
+    <p><strong>TL;DR:</strong> Office Hours is a live queue + video call platform that makes instructor help feel fair,
+    fast, and organized. Students join a queue with context. Instructors handle the queue like a triage board, then start
+    a call instantly when it’s your turn.</p>
+
+    <h2>The Problem</h2>
+    <p>
+      Traditional office hours break down in predictable ways: students show up at once, the loudest question dominates,
+      shy students wait forever, and instructors spend more time coordinating than teaching.
+      The “help” part is fine. The <em>system</em> around it is the bottleneck.
+    </p>
+
+    <h2>The Product Idea</h2>
+    <p>
+      Treat office hours like a real-time service queue. Students should be able to:
+    </p>
+    <ul>
+      <li>Join a queue from anywhere</li>
+      <li>State their question + urgency level</li>
+      <li>See their position and estimated wait</li>
+      <li>Get pulled into a call instantly when it’s their turn</li>
+    </ul>
+
+    <p>
+      Instructors should be able to:
+    </p>
+    <ul>
+      <li>See the queue live with question summaries</li>
+      <li>Reorder / prioritize (triage) when needed</li>
+      <li>Mark sessions done, no-shows, or “needs follow-up”</li>
+      <li>Start a 1:1 call without exchanging links</li>
+    </ul>
+
+    <h2>MVP Features</h2>
+    <h3>Live Queue</h3>
+    <p>
+      A student joins the queue with a short description (and optionally a course/topic tag).
+      The queue updates live for everyone, so students don’t have to guess when to show up.
+    </p>
+
+    <h3>Instructor Dashboard</h3>
+    <p>
+      The instructor view behaves like a lightweight operations console:
+      who’s waiting, what they need, how long they’ve been waiting, and quick actions to manage flow.
+    </p>
+
+    <h3>Video Call Hand-off</h3>
+    <p>
+      When the instructor starts a session, the system generates a “room” and both sides enter the call
+      from inside the app. No copying meeting links, no chaos.
+    </p>
+
+    <blockquote>
+      The goal is not “a Zoom clone.” The goal is <strong>queue discipline + instant handoff</strong>.
+    </blockquote>
+
+    <h2>System Design (How It Works)</h2>
+    <p>
+      The core concept is a <strong>Queue Session</strong> tied to a course/instructor time window.
+      Students create <strong>Queue Entries</strong>. When it’s time, the instructor promotes an entry into a
+      <strong>Call Room</strong>.
+    </p>
+
+    <ul>
+      <li><strong>QueueSession</strong>: instructorId, courseId, status, createdAt</li>
+      <li><strong>QueueEntry</strong>: sessionId, studentId, question, priority, status, timestamps</li>
+      <li><strong>Room</strong>: sessionId, entryId, roomId, participants, state</li>
+    </ul>
+
+    <h2>Realtime Layer</h2>
+    <p>
+      The queue needs to feel “live,” so updates are pushed immediately:
+      join/leave, reorder, status changes, call started, call ended.
+      This is where WebSockets (or SSE) shine: one source of truth, many subscribed clients.
+    </p>
+
+    <h3>Events (Examples)</h3>
+    <ul>
+      <li><code>queue:joined</code> → new entry added</li>
+      <li><code>queue:updated</code> → reorder / status changes</li>
+      <li><code>call:created</code> → room created for an entry</li>
+      <li><code>call:ended</code> → wrap up, close room, mark entry done</li>
+    </ul>
+
+    <h2>Fairness & UX Decisions</h2>
+    <p>
+      This project is “simple” on the surface, but fairness is the hard part. A few decisions mattered:
+    </p>
+    <ul>
+      <li><strong>Visibility:</strong> Students can see progress so they don’t hover anxiously.</li>
+      <li><strong>Context upfront:</strong> The question summary reduces back-and-forth.</li>
+      <li><strong>Soft prioritization:</strong> Instructors can triage without turning it into a mess.</li>
+      <li><strong>No link juggling:</strong> Call handoff is one click.</li>
+    </ul>
+
+    <h2>Security & Abuse Prevention</h2>
+    <ul>
+      <li>Authenticated access for students/instructors</li>
+      <li>Room tokens so only the correct participants can join calls</li>
+      <li>Rate limits on joins / spammy actions</li>
+      <li>Session-level moderation tools (kick/no-show)</li>
+    </ul>
+
+    <h2>What’s Next</h2>
+    <ul>
+      <li><strong>Estimated wait time</strong> based on rolling average session duration</li>
+      <li><strong>Group sessions</strong> for duplicate questions (“join this ongoing call”) </li>
+      <li><strong>Attachments</strong> (paste code snippet / upload screenshot)</li>
+      <li><strong>Post-session notes</strong> so students leave with a summary</li>
+      <li><strong>Analytics</strong> (peak hours, common topics, bottlenecks)</li>
+    </ul>
+
+    <p>
+      The big win: once a queue is a real system, office hours become accessible even for students
+      who wouldn’t normally show up in person.
+    </p>
   `
 }
+
 
 
 
