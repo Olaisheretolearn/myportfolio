@@ -475,12 +475,164 @@ that this project is situated.</p>
       who wouldn’t normally show up in person.
     </p>
   `
+},
+
+{
+slug: "jiwo-app",
+title: "Jiwo — Live Collaborative Lecture Notes",
+author: "Ola Oke",
+date: "2025",
+linkText: "GitHub",
+linkUrl: "[https://github.com/Olaisheretolearn/Jiwo](https://github.com/Olaisheretolearn/Jiwo)",
+contentHtml: ` <p><strong>TL;DR:</strong> Jiwo is a live, session-based note-taking app for lectures, where one person types and everyone else follows in real time. It replaces a room full of clanking keyboards with a single shared stream, while still allowing individuals to keep their own local edits.</p>
+
+ <img src="/images/jiwo.png" alt="placeholder" />
+<h2>Why Jiwo</h2>
+<p>
+  In most lectures, dozens of students are typing the same thing at the same time. Everyone is focused on transcription,
+  not understanding. Jiwo starts from a simple idea: <em>what if note-taking was shared instead of duplicated?</em>
+</p>
+<p>
+  One person acts as the host and types the notes live. Everyone else joins the session and reads along in real time.
+  Less noise, less distraction, and a single, coherent set of notes.
+</p>
+
+<h2>The Core Idea</h2>
+<p>
+  Jiwo is not a collaborative document where everyone edits everything at once. Instead, it separates the experience into
+  two layers:
+</p>
+<ul>
+  <li><strong>The shared stream</strong> — live notes typed by the host and synced to all participants</li>
+  <li><strong>Local edits</strong> — personal additions or annotations that don’t affect the main notes</li>
+</ul>
+<p>
+  This keeps the shared notes clean and authoritative, while still giving each student control over their own version.
+</p>
+
+<h2>Session-Based Architecture</h2>
+<p>
+  Jiwo is built around the concept of a live session. Each session has a unique class code that participants can use
+  to join instantly. Sessions can be marked live or ended, and the system clearly distinguishes between hosts and viewers.
+</p>
+<p>
+  This model mirrors how real classes work: a lecture starts, people join, notes are taken, and the session ends.
+  The software adapts to that flow instead of forcing everything into a static document.
+</p>
+
+<h2>Real-Time Collaboration</h2>
+<p>
+  Under the hood, Jiwo uses WebSockets to broadcast live updates to everyone in the session. When the host types,
+  updates are pushed immediately to connected viewers. Comments, claps, and live status changes are also synchronized
+  in real time.
+</p>
+<p>
+  Messages are small and typed, focusing on incremental updates rather than constantly re-sending full state.
+  This keeps the system responsive even with many connected users.
+</p>
+
+
+<h2>Live Session Experience</h2>
+<p>
+  Jiwo is built around live lecture sessions. Each class has a unique session code that students use to join instantly.
+  When a session is live, participants can follow the notes as they’re written in real time.
+</p>
+<p>
+  The experience mirrors a real lecture: a session starts, people join, notes evolve live, and the session eventually ends.
+</p>
+
+ <img src="/images/jiwo2.png" alt="placeholder" />
+
+
+
+<h2>Chat & Live Comments</h2>
+<p>
+  Each session includes a live comment feed where participants can ask questions, react, or clarify points
+  without interrupting the lecture flow.
+</p>
+<p>
+  Comments appear in real time for everyone in the session, creating a lightweight layer of discussion alongside the notes.
+</p>
+
+
+
+<h2>Claps & Feedback</h2>
+<p>
+  Jiwo includes a simple clap system that works like lightweight applause.
+  Participants can send claps to show appreciation, agreement, or encouragement during a session.
+</p>
+<p>
+  This gives the note writer immediate feedback without turning the session into a noisy chat room.
+</p>
+
+
+<h2>Tipping the Note Writer</h2>
+<p>
+  Since one person is often doing the work of typing live notes, Jiwo allows participants to tip the original writer.
+  This makes it easy to acknowledge effort and support contributors directly.
+</p>
+<p>
+  Tips are optional, but they reinforce the idea that good notes are valuable work.
+</p>
+
+<h2>After the Session</h2>
+<p>
+  If you miss a live session, Jiwo keeps the notes available for a limited time after the lecture ends.
+  Notes remain accessible for 24 hours, so students can catch up without needing a full recording.
+</p>
+<p>
+  This keeps sessions lightweight while still supporting short-term review.
+</p>
+
+
+ <img src="/images/jiwo3.png" alt="placeholder" />
+
+<h2>Downloadable Notes</h2>
+<p>
+  At any point, participants can download the session notes as a text file.
+  This ensures that live collaboration doesn’t come at the cost of long-term access.
+</p>
+<p>
+  Notes are simple, portable, and easy to store or annotate later.
+</p>
+
+
+<h2>Lightweight Interaction</h2>
+<p>
+  Jiwo intentionally keeps interaction simple. Viewers can react with claps, leave comments, and follow the flow of
+  the lecture without interrupting it. These features provide feedback and presence without turning the session
+  into a chat room.
+</p>
+
+<h2>Persistence and Export</h2>
+<p>
+  Notes are stored as plain text and can be downloaded at the end of a session. This ensures that live collaboration
+  does not come at the cost of long-term access. Sessions are temporary, but the knowledge isn’t.
+</p>
+
+<h2>What Jiwo Is (and Isn’t)</h2>
+<p>
+  Jiwo isn’t trying to replace full document editors or learning management systems. It focuses on a very specific
+  moment: the live lecture. By narrowing the scope, the system stays fast, predictable, and easy to use.
+</p>
+
+<h2>Looking Forward</h2>
+<p>
+  Future work includes richer presence indicators, improved local annotations, and better post-session summaries.
+  But the core idea will stay the same: reduce noise, share context, and let students focus on understanding rather
+  than typing.
+</p>
+`
+
 }
 
 
 
 
+
+
 ];
+
 
 
 
